@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    container_name: CHATAPI
+    restart: unless-stopped
+    volumes: 
+      - .:/CHATAPI
+    ports: 
+      - "8000:8000"
+    networks: 
+      - postgres
+
+networks: 
+  postgres:
+    driver: bridge
+
