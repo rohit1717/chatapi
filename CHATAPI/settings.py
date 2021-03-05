@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = "user_control.CustomUser"
 
 REST_FRAMEWORK={
-    'EXCEPTION_HANDLER':'chatapi.custom_methods.custom_exception_handler',
+    'EXCEPTION_HANDLER':'CHATAPI.custom_methods.custom_exception_handler',
     "DEFAULT_PAGINATION_CLASS":"rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE":20
 }
