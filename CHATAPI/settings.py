@@ -165,7 +165,7 @@ MEDIA_URL='/media/'
 
 STATIC_URL='https://%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,AWS_LOCATION)
 
-STATICFILES_STORAGE = config('STATICFILES_STORAGE')
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_OBJECT_PARAMETERS={
     'CacheControl':'max-age=86400',
