@@ -142,6 +142,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+STATIC_ROOT = 'staticfiles'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -150,7 +151,6 @@ STATICFILES_DIRS=[
 ]
 
 # S3_BUCKET_URL=config('S3_BUCKET_URL')
-STATIC_ROOT='staticfiles'
 AWS_S3_BUCKET_URL =config('AWS_S3_BUCKET_URL')
 AWS_ACCESS_KEY_ID=config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY=config('AWS_SECRET_ACCESS_KEY')
@@ -159,9 +159,9 @@ AWS_HOST_REGION=config('AWS_HOST_REGION')
 AWS_S3_CUSTOM_DOMAIN='%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_DEFAULT_ACL=None
 
+AWS_LOCATION = 'static'
 MEDIA_URL='/media/'
 
-AWS_LOCATION = 'static'
 
 STATIC_URL='https://%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,AWS_LOCATION)
 
